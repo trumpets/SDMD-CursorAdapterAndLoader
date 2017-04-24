@@ -42,7 +42,7 @@ public class StudentCursorAdapter extends CursorAdapter {
         studentAge.setText(String.valueOf(
                 cursor.getInt(cursor.getColumnIndexOrThrow(StudentManagementContract.Student.COLUMN_NAME_AGE))));
 
-        presenceCheckbox.setChecked(cursor.getLong(
-                cursor.getColumnIndexOrThrow(StudentManagementContract.Student._ID)) % 2 == 0);
+        presenceCheckbox.setChecked(
+                cursor.getInt(cursor.getColumnIndexOrThrow(StudentManagementContract.Student.COLUMN_NAME_AGE)) > 18);
     }
 }
